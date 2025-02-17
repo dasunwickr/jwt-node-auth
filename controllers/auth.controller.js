@@ -1,5 +1,5 @@
 module.exports.signup_get = (req, res) => {
-  res.render("signup get");
+  res.render("signup");
 };
 
 module.exports.signup_post = (req, res) => {
@@ -7,9 +7,11 @@ module.exports.signup_post = (req, res) => {
 };
 
 module.exports.login_get = (req, res) => {
-  res.render("login get");
+  res.render("login");
 };
 
 module.exports.login_post = (req, res) => {
+  const { email, password } = req.body;
+
   res.send("login post");
 };
