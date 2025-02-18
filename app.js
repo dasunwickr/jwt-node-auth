@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth.routes");
 
+require("dotenv").config();
+
 const app = express();
 
 // middleware
@@ -13,8 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 // database connection
-const dbURI =
-  "mongodb+srv://dbUser:uKOUCwSzTrZrD3oi@cluster0.kdhdj.mongodb.net/node-auth";
+const dbURI = process.env.MONGODB_URI;
 mongoose
   .connect(dbURI, {
     useNewUrlParser: true,
