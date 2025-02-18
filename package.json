@@ -6,7 +6,8 @@
   "dependencies": {
     "ejs": "^3.1.3",
     "express": "^4.17.1",
-    "mongoose": "^5.9.23"
+    "mongoose": "^5.9.23",
+    "validator": "^13.12.0"
   },
   "scripts": {
     "dev": "nodemon app.js"
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/iamshaunjp/node-express-jwt-auth/issues"
   },
-  "homepage": "https://github.com/iamshaunjp/node-express-jwt-auth#readme"
+  "homepage": "https://github.com/iamshaunjp/node-express-jwt-auth#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
