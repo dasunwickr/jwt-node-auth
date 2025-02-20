@@ -4,8 +4,12 @@
   <h2>Sign Up</h2>
   <label for="email">Email</label>
   <input type="email" name="email" id="email" />
+  <div class="email error"></div>
+  <!-- Added error div -->
   <label for="password">Password</label>
   <input type="password" name="password" id="password" />
+  <div class="password error"></div>
+  <!-- Added error div -->
   <button type="submit">Sign Up</button>
 </form>
 
@@ -13,14 +17,15 @@
   const form = document.querySelector("form");
   const emailError = document.querySelector(".email.error");
   const passwordError = document.querySelector(".password.error");
+
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // clear the errors
+    // Clear the errors
     emailError.textContent = "";
     passwordError.textContent = "";
 
-    // get the response from the server
+    // Get the response from the server
     const email = form.email.value;
     const password = form.password.value;
 
@@ -42,10 +47,11 @@
       }
 
       if (data.user) {
+        alert("Sign-up successful!");
         location.assign("/");
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error);
     }
   });
 </script>

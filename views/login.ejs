@@ -4,26 +4,28 @@
   <h2>Login</h2>
   <label for="email">Email</label>
   <input type="email" name="email" id="email" />
+  <div class="email error"></div>
+  <!-- Added error div -->
   <label for="password">Password</label>
   <input type="password" name="password" id="password" />
+  <div class="password error"></div>
+  <!-- Added error div -->
   <button type="submit">Login</button>
 </form>
 
 <script>
   const form = document.querySelector("form");
-
-  // clear the errors
-  emailError.textContent = "";
-  passwordError.textContent = "";
+  const emailError = document.querySelector(".email.error"); // Defined emailError
+  const passwordError = document.querySelector(".password.error"); // Defined passwordError
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // clear the errors
+    // Clear the errors
     emailError.textContent = "";
     passwordError.textContent = "";
 
-    // get the response from the server
+    // Get the response from the server
     const email = form.email.value;
     const password = form.password.value;
 
@@ -48,7 +50,7 @@
         location.assign("/");
       }
     } catch (error) {
-      console.log(error);
+      console.error("Error:", error);
     }
   });
 </script>
